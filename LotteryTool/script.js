@@ -50,10 +50,10 @@ drawButton.addEventListener('click', function () {
   }, 3000); // 最終結果を表示
 });
 
-// 過去の結果をリストに追加し、最大5件まで表示
+// 過去の結果をリストに追加し、最大3件まで表示
 function addToHistory(result) {
   history.unshift(result); // 新しい結果を先頭に追加
-  if (history.length > 5) history.pop(); // 10件を超えたら最後の要素を削除
+  if (history.length > 3) history.pop(); // 3件を超えたら最後の要素を削除
 
   // リストを更新
   historyList.innerHTML = "";

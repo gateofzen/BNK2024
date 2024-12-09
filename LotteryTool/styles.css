@@ -17,14 +17,14 @@ body {
   }
   
   #result {
-    font-size: 12.6rem; /* 元のサイズ 8.4rem の150%に拡大 */
+    font-size: 9.0rem; 
     font-weight: bold; /* 文字を太字に */
     margin-bottom: 50px; /* ボタンとの間隔を広げる */
   }
   
   #drawButton {
-    width: 120px; /* ボタンの幅 */
-    height: 120px; /* ボタンの高さ */
+    width: 70px; /* ボタンの幅 */
+    height: 70px; /* ボタンの高さ */
     background: rgba(255, 255, 255, 0.3); /* 非常に薄いボタン色 */
     border: none;
     border-radius: 50%;
