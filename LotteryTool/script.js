@@ -40,7 +40,7 @@ let history = []; // 過去の結果を保存する配列
 drawButton.addEventListener('click', function () {
   let interval = setInterval(() => {
     resultElement.textContent = candidates[Math.floor(Math.random() * candidates.length)];
-  }, 400); // 0.4秒ごとにランダム候補を表示
+  }, 1000); // 1秒ごとにランダム候補を表示
 
   setTimeout(() => {
     clearInterval(interval); // 3秒後にランダム表示を停止
