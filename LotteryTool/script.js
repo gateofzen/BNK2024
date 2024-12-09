@@ -40,7 +40,7 @@ let history = []; // 過去の結果を保存する配列
 drawButton.addEventListener('click', function () {
   let interval = setInterval(() => {
     resultElement.textContent = candidates[Math.floor(Math.random() * candidates.length)];
-  }, 100); // 0.1秒ごとにランダム候補を表示
+  }, 200); // 0.2秒ごとにランダム候補を表示
 
   setTimeout(() => {
     clearInterval(interval); // 3秒後にランダム表示を停止
@@ -53,7 +53,7 @@ drawButton.addEventListener('click', function () {
 // 過去の結果をリストに追加し、最大10件まで表示
 function addToHistory(result) {
   history.unshift(result); // 新しい結果を先頭に追加
-  if (history.length > 10) history.pop(); // 10件を超えたら最後の要素を削除
+  if (history.length > 5) history.pop(); // 5件を超えたら最後の要素を削除
 
   // リストを更新
   historyList.innerHTML = "";
