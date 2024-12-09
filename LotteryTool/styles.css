@@ -17,7 +17,7 @@ body {
   }
   
   #result {
-    font-size: 12.6rem; /* 元のサイズ 8.4rem の150%に拡大 */
+    font-size: 8.4rem; 
     font-weight: bold; /* 文字を太字に */
     margin-bottom: 50px; /* ボタンとの間隔を広げる */
   }
