@@ -30,20 +30,22 @@ body {
 }
 
 #drawButton {
-  width: 120px; /* ボタンの幅 */
-  height: 120px; /* ボタンの高さ */
-  background: rgba(255, 255, 255, 0.3); /* 非常に薄いボタン色 */
-  border: none;
-  border-radius: 50%;
+  width: 80px; /* ボタンの幅を小さく */
+  height: 80px; /* ボタンの高さを小さく */
+  background: transparent; /* 背景を透明に（黒抜き） */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* 境界線を薄い色で設定 */
+  border-radius: 50%; /* 円形のボタン */
   cursor: pointer;
   outline: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* ボタンに影を追加 */
+  box-shadow: none; /* ボタンの影を削除 */
+  transition: all 0.3s ease; /* ホバー時のエフェクトを滑らかに */
 }
 
 #drawButton:hover {
-  background: rgba(255, 255, 255, 0.5); /* ホバー時に少し濃くする */
-  transform: scale(1.1); /* ホバー時に拡大効果を追加 */
+  border-color: rgba(255, 255, 255, 0.6); /* ホバー時に境界線の色を少し濃く */
+  transform: scale(1.1); /* ホバー時に少し拡大 */
 }
+
 
 #historyContainer {
   margin-top: 20px;
