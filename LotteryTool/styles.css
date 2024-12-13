@@ -24,7 +24,7 @@ body {
 }
 
 #result {
-  font-size: 12.6rem; /* 150%に拡大済みの文字サイズ */
+  font-size: 8rem; /* 150%に拡大済みの文字サイズ */
   font-weight: bold; /* 文字を太字に */
   margin-bottom: 50px; /* ボタンとの間隔を広げる */
 }
