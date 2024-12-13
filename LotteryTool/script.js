@@ -31,35 +31,36 @@ const candidates = [
     "BB1 Hous4", "BB2 Xmas4", "BB2 CHARLI"
   ];
   
-const resultElement = document.getElementById('result');
-const drawButton = document.getElementById('drawButton');
-const historyList = document.getElementById('historyList');
-
-let history = []; // 過去の結果を保存する配列
-
-drawButton.addEventListener('click', function () {
-  let interval = setInterval(() => {
-    resultElement.textContent = candidates[Math.floor(Math.random() * candidates.length)];
-  }, 150); // 0.15秒ごとにランダム候補を表示
-
-  setTimeout(() => {
-    clearInterval(interval); // 3秒後にランダム表示を停止
-    const finalResult = candidates[Math.floor(Math.random() * candidates.length)];
-    resultElement.textContent = finalResult;
-    addToHistory(finalResult); // 過去の結果に追加
-  }, 3000); // 最終結果を表示
-});
-
-// 過去の結果をリストに追加し、最大3件まで表示
-function addToHistory(result) {
-  history.unshift(result); // 新しい結果を先頭に追加
-  if (history.length > 3) history.pop(); // 3件を超えたら最後の要素を削除
-
-  // リストを更新
-  historyList.innerHTML = "";
-  history.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = item;
-    historyList.appendChild(li);
+  const resultElement = document.getElementById('result');
+  const drawButton = document.getElementById('drawButton');
+  const historyList = document.getElementById('historyList');
+  
+  let history = []; // 過去の結果を保存する配列
+  
+  drawButton.addEventListener('click', function () {
+    let interval = setInterval(() => {
+      resultElement.textContent = candidates[Math.floor(Math.random() * candidates.length)];
+    }, 150); // 0.15秒ごとにランダム候補を表示
+  
+    setTimeout(() => {
+      clearInterval(interval); // 3秒後にランダム表示を停止
+      const finalResult = candidates[Math.floor(Math.random() * candidates.length)];
+      resultElement.textContent = finalResult;
+      addToHistory(finalResult); // 過去の結果に追加
+    }, 3000); // 最終結果を表示
   });
-}
+  
+  // 過去の結果をリストに追加し、最大3件まで表示
+  function addToHistory(result) {
+    history.unshift(result); // 新しい結果を先頭に追加
+    if (history.length > 3) history.pop(); // 3件を超えたら最後の要素を削除
+  
+    // リストを更新
+    historyList.innerHTML = "";
+    history.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      historyList.appendChild(li);
+    });
+  }
+  
