@@ -1,52 +1,58 @@
+@font-face {
+  font-family: 'BrotherXL';
+  src: url('./fonts/Brother_XL_Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('./images/FC_logo.png') no-repeat center center fixed;
-    background-size: cover; /* 画面全体に合わせて拡大縮小 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* 上から下に配置 */
-    height: 100vh;
-    color: white; /* テキストを白に設定 */
-  }
-  
-  .container {
-    text-align: center;
-  }
-  
-  #result {
-    font-size: 9.0rem; 
-    font-weight: bold; /* 文字を太字に */
-    margin-bottom: 50px; /* ボタンとの間隔を広げる */
-  }
-  
-  #drawButton {
-    width: 70px; /* ボタンの幅 */
-    height: 70px; /* ボタンの高さ */
-    background: rgba(255, 255, 255, 0.3); /* 非常に薄いボタン色 */
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    outline: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* ボタンに影を追加 */
-  }
-  
-  #drawButton:hover {
-    background: rgba(255, 255, 255, 0.5); /* ホバー時に少し濃くする */
-    transform: scale(1.1); /* ホバー時に拡大効果を追加 */
-  }
-  
-  #historyContainer {
-    margin-top: 20px;
-    font-size: 2.1rem; /* 抽選結果の文字サイズの1/4 (8.4rem × 0.25) */
-    text-align: center;
-  }
-  
-  #historyList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
+  font-family: 'BrotherXL', Arial, sans-serif; /* BrotherXLフォントを適用 */
+  margin: 0;
+  padding: 0;
+  background: url('./FC_logo.png') no-repeat center center fixed; /* 背景画像を設定 */
+  background-size: cover; /* 画面全体に合わせて拡大縮小 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* 上から下に配置 */
+  height: 100vh;
+  color: white; /* テキストを白に設定 */
+}
+
+.container {
+  text-align: center;
+}
+
+#result {
+  font-size: 12.6rem; /* 150%に拡大済みの文字サイズ */
+  font-weight: bold; /* 文字を太字に */
+  margin-bottom: 50px; /* ボタンとの間隔を広げる */
+}
+
+#drawButton {
+  width: 120px; /* ボタンの幅 */
+  height: 120px; /* ボタンの高さ */
+  background: rgba(255, 255, 255, 0.3); /* 非常に薄いボタン色 */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* ボタンに影を追加 */
+}
+
+#drawButton:hover {
+  background: rgba(255, 255, 255, 0.5); /* ホバー時に少し濃くする */
+  transform: scale(1.1); /* ホバー時に拡大効果を追加 */
+}
+
+#historyContainer {
+  margin-top: 20px;
+  font-size: 2.1rem; /* 抽選結果の文字サイズの1/4 */
+  text-align: center;
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
