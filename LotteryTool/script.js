@@ -32,35 +32,49 @@ const candidates = [
   ];
   
   const resultElement = document.getElementById('result');
-  const drawButton = document.getElementById('drawButton');
-  const historyList = document.getElementById('historyList');
-  
-  let history = []; // 過去の結果を保存する配列
-  
-  drawButton.addEventListener('click', function () {
-    let interval = setInterval(() => {
-      resultElement.textContent = candidates[Math.floor(Math.random() * candidates.length)];
-    }, 150); // 0.15秒ごとにランダム候補を表示
-  
-    setTimeout(() => {
-      clearInterval(interval); // 3秒後にランダム表示を停止
-      const finalResult = candidates[Math.floor(Math.random() * candidates.length)];
-      resultElement.textContent = finalResult;
-      addToHistory(finalResult); // 過去の結果に追加
-    }, 3000); // 最終結果を表示
-  });
-  
-  // 過去の結果をリストに追加し、最大3件まで表示
-  function addToHistory(result) {
-    history.unshift(result); // 新しい結果を先頭に追加
-    if (history.length > 3) history.pop(); // 3件を超えたら最後の要素を削除
-  
-    // リストを更新
-    historyList.innerHTML = "";
-    history.forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = item;
-      historyList.appendChild(li);
-    });
+const drawButton = document.getElementById('drawButton');
+const historyList = document.getElementById('historyList');
+
+let availableCandidates = [...candidates]; // 抽選可能な候補リスト
+let history = []; // 過去の結果を保存する配列
+
+drawButton.addEventListener('click', function () {
+  if (availableCandidates.length === 0) {
+    resultElement.textContent = "すべて選ばれました！"; // すべての候補が選ばれた場合
+    return;
   }
-  
+
+  let interval = setInterval(() => {
+    const randomCandidate = availableCandidates[Math.floor(Math.random() * availableCandidates.length)];
+    resultElement.textContent = randomCandidate;
+  }, 150); // 0.15秒ごとにランダム候補を表示
+
+  setTimeout(() => {
+    clearInterval(interval); // 3秒後にランダム表示を停止
+    const finalResult = drawRandomCandidate(); // 候補を1つ選択
+    resultElement.textContent = finalResult;
+    addToHistory(finalResult); // 過去の結果に追加
+  }, 3000); // 最終結果を表示
+});
+
+// 候補をランダムに1つ選び、リストから削除
+function drawRandomCandidate() {
+  const index = Math.floor(Math.random() * availableCandidates.length);
+  const selectedCandidate = availableCandidates[index];
+  availableCandidates.splice(index, 1); // 選択した候補をリストから削除
+  return selectedCandidate;
+}
+
+// 過去の結果をリストに追加し、最大3件まで表示
+function addToHistory(result) {
+  history.unshift(result); // 新しい結果を先頭に追加
+  if (history.length > 3) history.pop(); // 3件を超えたら最後の要素を削除
+
+  // リストを更新
+  historyList.innerHTML = "";
+  history.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    historyList.appendChild(li);
+  });
+}
