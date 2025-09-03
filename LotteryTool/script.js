@@ -11,10 +11,10 @@ const candidates = [
     "BB2 MJ 1", "BB2 MJ 2", "BB2 MJ 3", "BB2 MLN 1", "BB2 MLN 2", "BB2 MLN 3", "BB2 Soul 1", "BB2 Soul 2", "BB2 Rock 1",
     "BB2 Rock 2", "BB2 Movie 1", "BB2 Movie 2", "BB2 MTGX", "BB2 P!NK", "BB2 PTX", "BB2 QOP 1", "BB2 Queen",
     "BB2 Regg 1", "BB2 Regg 2", "BB2 RHNA", "BB2 SUMR 1", "BB2 SUMR 2", "BB2 Xmas 1", "BB2 Xmas 2", "BB2 Xmas 3",
-    "BB2 BTLS 1", "BB2 BTLS 2", "BB2 BTLS 3", "BB2 ARGD", "BB2 ADELE", "BB2 BEYONCE", "BB2 BRJ", "BB2 BRMS 1",
+    "BB2 BTLS 1", "BB2 BTLS 2", "BB2 BTLS 3", "BB2 ARGD", "BB2 ADELE", "BB2 BEYONCE", "BB2 BRJ", "BB2 BRMS",
     "BB2 BMLY", "BB2 Avicii", "BB2 DVGT", "BB2 EDM", "BB2 FLG", "BB2 GRDY", "BB2 ZEDD", "BB2 1D", "BB2 BNJV",
-    "BB2 BRIT 2023", "BB2 BRMS 2", "BB2 CDPY 1", "BB2 CSBW 1", "BB2 CVHS", "BB2 Dua Lipa 1", "BB2 EDSR", "BB2 Eminem",
-    "BB2 FLOB", "BB2 HBHC", "BB2 Kygo", "BB2 Lady Gaga", "BB2 Lizzo", "BB2 Maroon5", "BB2 NE-YO", "BB2 USHER 1", "BB2 USHER 2",
+    "BB2 BRIT 2023", "BB2 BRMS 2", "BB2 CDPY", "BB2 CSBW", "BB2 CVHS", "BB2 Dua Lipa", "BB2 EDSR", "BB2 EMINEM",
+    "BB2 FLOB", "BB2 HBHC", "BB2 KYGO", "BB2 LDGG", "BB2 Lizzo", "BB2 MRN5", "BB2 NE-YO", "BB2 USHER", "BB2 USHER 2",
     "BB2 SMST", "BB2 CDPY 2", "BB2 R&B 1", "BB2 R&B 2", "BB2 3Y-1", "BB2 3Y-2", "BB2 2016", "BB2 2017", "BB2 2018",
     "BB2 2019", "BB3 Hit 1", "BB3 Hit 2", "BB3 Hit 3", "BB3 Hit 4", "BB3 Hit 5", "BB3 Hit 6", "BB3 UPGD 1",
     "BB3 Comp 1", "BB3 HH 1", "BB3 HH 2", "BB3 Hous 1", "BB3 Hous 2", "BB3 Hous 3", "BB3 Deep 1", "BB3 Regg 1",
@@ -29,6 +29,9 @@ const candidates = [
     "BB2 Hous 6", "BSW 10s 1", "BB2 GRMY 66", "L24 FEEL", "L24 FREE", "BB1 BRIT 2024", "BB2 Dua Lipa 2", "BSWi BMLY",
     "BSBi BMLY", "BB1 Hous 3", "BB3 Hous 4", "BB1 NOW 1", "BSL Deep 3", "BB2 10s 3", "L24 FREE 2", "L24 FEEL 2",
     "BB1 Hous 4", "BB2 Xmas 4", "BB2 CHARLI", "BB2 RDMC", "BB2 RHCP", "BB2 JMCL", "BB2 Jeff Beck", "BB2 SIGALA", 
+    "BB2 CSBW 2", "BB2 NOW 1", "BSW L&S", "BB1 GRMY 67", "BB2 BRIT 2025", "BB2 LDGG 2", "BB2 NOW 2", "BB2 10s 4", "BSL Deep 4",
+    "BSW Hous 3", "BB2 Hous 7", "BSB HH 2", "L25 FEEL", "L25 FREE", "BSWi Hous 4", "L25 BTM", "BB3 10s 1", "BB1 NOW 2",
+    "BSBi Deep 1",
   ];
   
   const resultElement = document.getElementById('result');
@@ -78,3 +81,4 @@ function addToHistory(result) {
     historyList.appendChild(li);
   });
 }
+
