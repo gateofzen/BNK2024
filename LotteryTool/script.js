@@ -26,11 +26,11 @@ const candidates = [
     "BSL Hit 7", "BSL Hit 8", "BSL Hous 1", "BSL Hous 2", "BSL Comp 1", "BSL Rock 1", "BSL Deep 1", "BSL Deep 2",
     "BSWi Hous 1", "BSWi Hous 2", "BSWi Hous 3", "BSWi HH 1", "BSWi Metal 1", "BSBi Hous 1", "BSBi Hous 2", "SKRILLEX",
     "FEEL NOW", "8th SP", "9th SP 1", "9th SP 2", "10th SP", "FEEL DEEP", "FEEL HIGH", "BSW R&B 1",
-    "BB2 Hous 6", "BSW 10s 1", "BB2 GRMY 66", "L24 FEEL", "L24 FREE", "BB1 BRIT 2024", "BB2 Dua Lipa 2", "BSWi BMLY",
-    "BSBi BMLY", "BB1 Hous 3", "BB3 Hous 4", "BB1 NOW 1", "BSL Deep 3", "BB2 10s 3", "L24 FREE 2", "L24 FEEL 2",
+    "BB2 Hous 6", "BSW 10s 1", "BB2 GRMY 66", "L 24 FEEL", "L 24 FREE", "BB1 BRIT 2024", "BB2 Dua Lipa 2", "BSWi BMLY",
+    "BSBi BMLY", "BB1 Hous 3", "BB3 Hous 4", "BB1 NOW 1", "BSL Deep 3", "BB2 10s 3", "L 24 FREE 2", "L 24 FEEL 2",
     "BB1 Hous 4", "BB2 Xmas 4", "BB2 CHARLI", "BB2 RDMC", "BB2 RHCP", "BB2 JMCL", "BB2 Jeff Beck", "BB2 SIGALA", 
     "BB2 CSBW 2", "BB2 NOW 1", "BSW L&S", "BB1 GRMY 67", "BB2 BRIT 2025", "BB2 LDGG 2", "BB2 NOW 2", "BB2 10s 4", "BSL Deep 4",
-    "BSW Hous 3", "BB2 Hous 7", "BSB HH 2", "L25 FEEL", "L25 FREE", "BSWi Hous 4", "L25 BTM", "BB3 10s 1", "BB1 NOW 2",
+    "BSW Hous 3", "BB2 Hous 7", "BSB HH 2", "L 25 FEEL", "L 25 FREE", "BSWi Hous 4", "L 25 BTM", "BB3 10s 1", "BB1 NOW 2",
     "BSBi Deep 1",
   ];
   
@@ -81,4 +81,5 @@ function addToHistory(result) {
     historyList.appendChild(li);
   });
 }
+
 
