@@ -27,6 +27,8 @@ body {
   font-size: 9rem; /* 150%に拡大済みの文字サイズ */
   font-weight: bold; /* 文字を太字に */
   margin-bottom: 50px; /* ボタンとの間隔を広げる */
+  display: inline-block; /* 帯の幅を文字に合わせるため */
+  transition: all 0.3s ease; /* 色変更時のトランジション */
 }
 
 #drawButton {
@@ -46,9 +48,9 @@ body {
   transform: scale(1.1); /* ホバー時に少し拡大 */
 }
 
-
 #historyContainer {
   margin-top: 20px;
+  margin-bottom: 30px; /* ボタンとの間隔を追加 */
   font-size: 2.1rem; /* 抽選結果の文字サイズの1/4 */
   text-align: center;
 }
@@ -57,4 +59,8 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+#historyList li {
+  transition: all 0.3s ease; /* 色変更時のトランジション */
 }
