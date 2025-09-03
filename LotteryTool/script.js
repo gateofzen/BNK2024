@@ -34,28 +34,102 @@ const candidates = [
     "BSBi Deep 1",
   ];
   
-  const resultElement = document.getElementById('result');
+const resultElement = document.getElementById('result');
 const drawButton = document.getElementById('drawButton');
 const historyList = document.getElementById('historyList');
 
 let availableCandidates = [...candidates]; // 抽選可能な候補リスト
 let history = []; // 過去の結果を保存する配列
 
+// 文字列に応じてスタイル（背景色と文字色）を適用する関数
+function applyStyle(element, text) {
+  // デフォルトスタイルをリセット
+  element.style.background = 'transparent';
+  element.style.color = 'white';
+  element.style.padding = '20px 40px'; // 帯のように見せるためのpadding
+  
+  // 優先順位の高い順にチェック
+  if (text.includes("FEEL NOW G")) {
+    element.style.background = '#B08A3A';
+    element.style.color = 'white';
+  } else if (text.includes("FEEL NOW S")) {
+    element.style.background = '#666666';
+    element.style.color = 'white';
+  } else if (text.includes("FEEL NOW B")) {
+    element.style.background = '#00121C';
+    element.style.color = 'white';
+  } else if (text.includes("FEEL HIGH")) {
+    element.style.background = 'white';
+    element.style.color = 'black';
+  } else if (text.includes("FEEL DEEP")) {
+    element.style.background = 'white';
+    element.style.color = 'black';
+  } else if (text.includes("ITS")) {
+    element.style.background = 'black';
+    element.style.color = 'white';
+  } else if (text.includes("BEERCYCLE")) {
+    element.style.background = '#7A3202';
+    element.style.color = 'white';
+  } else if (text.includes("SKRILLEX")) {
+    element.style.background = 'white';
+    element.style.color = 'black';
+  } else if (text.includes("BTM")) {
+    element.style.background = '#00121C';
+    element.style.color = '#BD3EA4';
+  } else if (text.includes("FREE")) {
+    element.style.background = '#00121C';
+    element.style.color = '#D61C1C';
+  } else if (text.includes("FEEL")) {
+    element.style.background = '#00121C';
+    element.style.color = '#0761F1';
+  } else if (text.includes("SP")) {
+    element.style.background = '#00121C';
+    element.style.color = 'white';
+  } else if (text.includes("BSBi")) {
+    element.style.background = '#336699';
+    element.style.color = '#DEFF66';
+  } else if (text.includes("BSB")) {
+    element.style.background = '#00CCFF';
+    element.style.color = 'black';
+  } else if (text.includes("BSWi")) {
+    element.style.background = '#990099';
+    element.style.color = '#FFEF7F';
+  } else if (text.includes("BSW")) {
+    element.style.background = '#CC66FF';
+    element.style.color = 'white';
+  } else if (text.includes("BSL")) {
+    element.style.background = '#0000CC';
+    element.style.color = 'white';
+  } else if (text.includes("BB3")) {
+    element.style.background = '#FF3300';
+    element.style.color = 'black';
+  } else if (text.includes("BB2")) {
+    element.style.background = '#FF9933';
+    element.style.color = 'black';
+  } else if (text.includes("BB1")) {
+    element.style.background = '#FFFF66';
+    element.style.color = 'black';
+  }
+}
+
 drawButton.addEventListener('click', function () {
   if (availableCandidates.length === 0) {
-    resultElement.textContent = "すべて選ばれました！"; // すべての候補が選ばれた場合
+    resultElement.textContent = "すべて選ばれました！";
+    applyStyle(resultElement, "");
     return;
   }
 
   let interval = setInterval(() => {
     const randomCandidate = availableCandidates[Math.floor(Math.random() * availableCandidates.length)];
     resultElement.textContent = randomCandidate;
+    applyStyle(resultElement, randomCandidate);
   }, 150); // 0.15秒ごとにランダム候補を表示
 
   setTimeout(() => {
     clearInterval(interval); // 3秒後にランダム表示を停止
     const finalResult = drawRandomCandidate(); // 候補を1つ選択
     resultElement.textContent = finalResult;
+    applyStyle(resultElement, finalResult);
     addToHistory(finalResult); // 過去の結果に追加
   }, 3000); // 最終結果を表示
 });
@@ -68,18 +142,20 @@ function drawRandomCandidate() {
   return selectedCandidate;
 }
 
-// 過去の結果をリストに追加し、最大3件まで表示
+// 過去の結果をリストに追加し、最大5件まで表示
 function addToHistory(result) {
   history.unshift(result); // 新しい結果を先頭に追加
-  if (history.length > 3) history.pop(); // 3件を超えたら最後の要素を削除
+  if (history.length > 5) history.pop(); // 5件を超えたら最後の要素を削除
 
   // リストを更新
   historyList.innerHTML = "";
   history.forEach(item => {
     const li = document.createElement('li');
     li.textContent = item;
+    li.style.padding = '5px 15px';
+    li.style.display = 'inline-block';
+    li.style.margin = '5px 0';
+    applyStyle(li, item); // 履歴にも同じスタイルを適用
     historyList.appendChild(li);
   });
 }
-
-
