@@ -154,7 +154,7 @@ function addToHistory(result) {
     li.textContent = item;
     li.style.padding = '5px 15px';
     li.style.display = 'inline-block';
-    li.style.margin = '5px 0';
+    li.style.margin = '5px'; // 上下左右に同じ間隔
     applyStyle(li, item); // 履歴にも同じスタイルを適用
     historyList.appendChild(li);
   });
