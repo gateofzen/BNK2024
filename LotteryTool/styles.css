@@ -63,4 +63,5 @@ body {
 
 #historyList li {
   transition: all 0.3s ease; /* 色変更時のトランジション */
+  margin: 5px; /* 上下左右に同じ間隔を設定 */
 }
